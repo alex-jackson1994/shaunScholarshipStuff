@@ -12,10 +12,10 @@ with open(filename) as infile: #lets python realise a variable called infile exi
 	for line in infile: #loop over each line in the file
 		if ">" in line:
 			firstSpace=line.find(' ')
-			fileName=line[1:firstSpace]
+			newFileName=line[1:firstSpace]
 			#iterate to next text file and write line if it's the header of a sequence
 			j=j+1
-			print(line, file=open(fileName, 'a'), end='')
+			print(line, file=open(newFileName, 'a'), end='')
 		else:
 			#write line to file if it's just a continuing part of the sequence
-			print(line, file=open(fileName, 'a'), end='')
+			print(line, file=open(newFileName, 'a'), end='')
