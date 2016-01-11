@@ -11,7 +11,7 @@ else:
 with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
 	print(infile.readline(), file=open("combined"+filename, 'a'), end='')	
 	for line in infile: #loop over each line in the file
-		if ">" in line:
+		if ">" in line or "@" in line or "//" in line:
 			continue
 		else:
 			#write line to file if it's just a continuing part of the sequence

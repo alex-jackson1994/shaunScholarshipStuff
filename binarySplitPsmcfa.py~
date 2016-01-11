@@ -1,0 +1,42 @@
+#!/usr/bin/python
+import sys
+#import numpy as np
+from math import ceil
+
+if len(sys.argv) > 1:
+	filename = sys.argv[1] #take filename as a system argument
+else:
+	print('You have incorrectly passed a filename, the correct syntax is: python binarySplitPsmcfa.py [filename]')
+
+#numLines = sum(1 for line in open(filename))
+newFileName="BinarySplit"+filename
+#headers=np.array([])
+#midPositions=np.array([])
+headers=[]
+midPositions=[]
+with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
+	j=0
+	for line in infile: #loop over each line in the file
+		j=j+1
+		if ">" in line:
+			#np.append(headers,j)
+			headers.append(j)
+#np.append(headers,j)
+headers.append(j)
+#print(headers)
+for i in range(0,len(headers)-1):
+	midPositions.append(ceil((headers[i]+headers[i+1])/2))
+numSplits=len(midPositions)
+#print(midPositions)
+midPositions.append(j+10)
+with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
+	i=0
+	j=0
+	for line in infile: #loop over each line in the file
+		j=j+1
+		if(j==midPositions[i]):
+			print('>split'+str(headers[i]), file=open(newFileName, 'a'))
+			i=i+1
+			print(line, file=open(newFileName, 'a'), end='')
+		else:
+			print(line, file=open(newFileName, 'a'), end='')

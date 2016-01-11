@@ -4,9 +4,9 @@ import sys
 
 if len(sys.argv) > 1:
 	filename = sys.argv[1] #take filename as a system argument
-else:	
-	print("You haven't provided a file correctly")
-	#filename = askopenfilename() #pop up box to choose file to load in
+else:
+	print("You've not passed a .psmcfa file correctly")
+#	filename = askopenfilename() #pop up box to choose file to load in
 	
 with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
 	print(infile.readline(), file=open("combined"+filename, 'a'), end='')	

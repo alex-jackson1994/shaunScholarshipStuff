@@ -9,9 +9,10 @@ else:
 	#filename = askopenfilename() #pop up box to choose file to load in
 	
 with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
-	print(infile.readline(), file=open("combined"+filename, 'a'), end='')	
+	headerLine=infile.readline()
+	integersInHeader=[int(s) for s in str.split() if s.isdigit()]
 	for line in infile: #loop over each line in the file
-		if ">" in line:
+		if ">" in line or "@" in line or "//" in line:
 			continue
 		else:
 			#write line to file if it's just a continuing part of the sequence
