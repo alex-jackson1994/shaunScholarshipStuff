@@ -9,7 +9,6 @@ if len(sys.argv) > 1:
 else:
 	print('You have incorrectly passed a filename, the correct syntax is: python binarySplitPsmcfa.py [filename]')
 
-#newFileName="BinarySplit"+filename #define a filename to output
 headers=[] # define some empty lists for use later
 midPositions=[]
 
@@ -22,8 +21,6 @@ with open(filename) as infile: #lets python realise a variable called infile exi
 
 headers.append(j) #add the end of the file to the headers list
 for i in range(0,len(headers)-1):
-#	if(ceil((headers[i]+headers[i+1])/2)==headers[i]):
-#		continue
 	if((headers[i+1]-headers[i])==2):
 		continue
 	midPositions.append(ceil((headers[i]+headers[i+1])/2)) #find the midpoint of each chromosome by taking the rounded average of each header's position
