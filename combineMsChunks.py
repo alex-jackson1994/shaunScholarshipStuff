@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#This script combines every chromosome/contig in a MSHot-lite (called with -l) format file into a single chromosome
 import sys
 #from tkinter.filedialog import askopenfilename
 

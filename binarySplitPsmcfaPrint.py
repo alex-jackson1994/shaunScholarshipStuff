@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#This file takes a .psmcfa as an input file and then outputs a .psmcfa file to the command line where every chromosome/contig is split into two separate contigs. Generally called by 'python binarySplitPsmcfaPrint.py originalPsmcFile.psmcfa > splitFile.psmcfa'
 import sys
 #import numpy as np
 from math import ceil

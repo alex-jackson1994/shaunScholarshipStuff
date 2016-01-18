@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#This script splits up every chromosome and contig ina FASTA format file into a separate text file
+
 import sys
 from tkinter.filedialog import askopenfilename
 
