@@ -16,7 +16,7 @@ with open(filename) as infile: #lets python realise a variable called infile exi
 			chromoLengths.append(currentLength)
 			currentLength=0
 		else:
-			currentLength+=len(line)
+			currentLength+=(len(line)-1) #subtract 1 to account for end of line characters we have no interest in
 chromoLengths.append(currentLength)
-print('min	max	mean	median')
-print(str(min(chromoLengths)*100)+'	'+str(max(chromoLengths)*100)+'	'+str(statistics.mean(chromoLengths)*100)+'	'+str(statistics.median(chromoLengths)*100))
+print('min	max	mean	median	totalLength')
+print(str(min(chromoLengths)*100)+'	'+str(max(chromoLengths)*100)+'	'+str(statistics.mean(chromoLengths)*100)+'	'+str(statistics.median(chromoLengths)*100)+'	'+str(sum(chromoLengths)*100))
