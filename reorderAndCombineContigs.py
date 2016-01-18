@@ -51,6 +51,9 @@ with open(filename) as infile:
 	for i in randomOrder:
 		infile.seek(lineOffset[headers[i]])
 		for j in range(0,chromoLength[i]-1):
+		#j=0
+		#while(j<chromoLength[i]):
+			#j+=1
 			line=infile.readline()
 			print(line, end='')
 
