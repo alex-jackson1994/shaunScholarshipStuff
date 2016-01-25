@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #This script combines every chromosome/contig in a MSHot-lite (called with -l) format file into a single chromosome
 import sys
 #from tkinter.filedialog import askopenfilename
@@ -9,7 +9,7 @@ else:
 	print("You haven't provided a file correctly")
 	#filename = askopenfilename() #pop up box to choose file to load in
 	
-with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
+with open(filename) as infile: #uses python 3 to call lines from a file without having to load the whole thing into memory. 
 	headerLine=infile.readline()
 	integersInHeader=[int(s) for s in str.split() if s.isdigit()]
 	for line in infile: #loop over each line in the file

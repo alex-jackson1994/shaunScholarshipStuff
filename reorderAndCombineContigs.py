@@ -1,5 +1,5 @@
-#!/usr/bin/python
-#This file takes a .psmcfa as an input file and then outputs a .psmcfa file to the command line where every chromosome/contig is split into two separate contigs. Generally called by 'python binarySplitPsmcfaPrint.py originalPsmcFile.psmcfa > splitFile.psmcfa'
+#!/usr/bin/env python3
+#This scripts needs a description. Will YOU be the one to add it?
 import sys
 from math import ceil
 from random import shuffle
@@ -11,7 +11,7 @@ from random import shuffle
 if len(sys.argv)>1:
 	filename=sys.argv[1] #take filename as a system argument
 else:
-	print('You have incorrectly passed a filename, the correct syntax is: python binarySplitPsmcfa.py [filename]')
+	print('You have incorrectly passed a filename, the correct syntax is: python reorderAndCombineContigs.py [filename]')
 ###############################################################
 # record line breaks for the file so to jump between lines later
 # record header positions
@@ -21,7 +21,7 @@ chromoLength=[]
 lineOffset=[]
 offset=0
 
-with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
+with open(filename) as infile: #uses python 3 to call lines from a file without having to load the whole thing into memory. 
 	j=0
 	#This loop both finds the position of every line break and of each header
 	for line in infile: #loop over each line in the file
@@ -51,9 +51,6 @@ with open(filename) as infile:
 	for i in randomOrder:
 		infile.seek(lineOffset[headers[i]])
 		for j in range(0,chromoLength[i]-1):
-		#j=0
-		#while(j<chromoLength[i]):
-			#j+=1
 			line=infile.readline()
 			print(line, end='')
 

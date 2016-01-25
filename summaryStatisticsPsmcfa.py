@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import sys
 import statistics
 
@@ -9,7 +9,7 @@ else:
 
 chromoLengths=[]
 currentLength=0
-with open(filename) as infile: #lets python realise a variable called infile exists without loading it into memory!
+with open(filename) as infile: #uses python 3 to call lines from a file without having to load the whole thing into memory. 
 	next(infile)
 	for line in infile: #loop over each line in the file
 		if ">" in line:
