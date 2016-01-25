@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-#This script splits up every chromosome and contig ina FASTA format file into a separate text file
+#USE: 'splitFasta.py [inputFile]'
+#This script splits up every chromosome and contig in a FASTA format file into a separate text file name after the header for that chromosome
 
 import sys
-from tkinter.filedialog import askopenfilename
 
 if len(sys.argv) > 1:
 	filename = sys.argv[1] #take filename as a system argument
 else:
-	filename = askopenfilename() #pop up box to choose file to load in
-
+	sys.exit("Correct syntax: 'splitFasta.py [inputFile]'")
 with open(filename) as infile: #uses python 3 to call lines from a file without having to load the whole thing into memory. 
 	j=0
 	for line in infile: #loop over each line in the file

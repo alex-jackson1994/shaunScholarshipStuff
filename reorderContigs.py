@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-#This scripts needs a description. Will YOU be the one to add it?
+#USE: 'reorderContigs.py [inputFile.psmcfa] > [outputFile.psmcfa]'
+#This script reorders the location of contigs within a .psmcfa file. This in itself will do nothing to affect the results of PSMC however it may be used in conjunction with another script to remove the headers and create random contigs from the original contigs
 import sys
 from math import ceil
 from random import shuffle
@@ -11,7 +12,7 @@ from random import shuffle
 if len(sys.argv)>1:
 	filename=sys.argv[1] #take filename as a system argument
 else:
-	print('You have incorrectly passed a filename, the correct syntax is: python reorderAndCombineContigs.py [filename]')
+	print("You have incorrectly passed a filename, the correct syntax is: 'reorderAndCombineContigs.py [inputFile.psmcfa]'")
 ###############################################################
 # record line breaks for the file so to jump between lines later
 # record header positions

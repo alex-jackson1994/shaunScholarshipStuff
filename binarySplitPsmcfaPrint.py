@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#Use: 'binarySplitPsmcfa.py [filename]'
 #This file takes a .psmcfa as an input file and then outputs to the command line a .psmcfa file, where every chromosome/contig is split into two separate contigs. Generally called by 'python binarySplitPsmcfaPrint.py originalPsmcFile.psmcfa > splitFile.psmcfa'
 #IMPORTANT NOTE!: One of the side effects of how this script works is that it splits chromosomes by line. That means the shortest a chromosome can ever be is a single line long.
 #				  A single line of a .psmcfa file is the length times 100 base pairs (each character represents 100 base pairs).

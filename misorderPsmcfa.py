@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#THIS SCRIPT IS UNFINISHED! IT STILL NEEDS DEBUGGING! DO NOT USE YET!!!
 #This scripts needs a description. Will YOU be the one to add it?
 
 import sys

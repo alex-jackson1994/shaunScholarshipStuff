@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-#This scripts needs a description. Will YOU be the one to add it?
-
+#USE: 'removeRandomContigs.py [inputFile.psmcfa] [probability=0.1] > [outputFile.psmcfa]
+#This script takes a input .psmcfa file and then removes random contigs from the file. The probability of removal (and hence rough frequency) is given
+#as the command line argument probability (see above). The probability defaults to 0.1 if it is not specified. Note the probability is the removal frequency;
+#hence 0.1 removes 10% of all contigs leaving 90% remaining.
 import sys
 from random import random
 

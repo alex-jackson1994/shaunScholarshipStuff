@@ -1,4 +1,9 @@
 #!/usr/bin/bash
+#USE: 'bash partRemovalRepeated.sh' which will need to either have simulationName.fq.gz or simulationName.psmcfa in the current directory
+#This script was used to produce data for regression using the Steppe Bison genome. The data was split up into approximately 10%,20%,30% ... 90% of the original data
+#Note this is only approximate since I used a random number generator and a bernoulli trial to decide whether the data should be kept or skipped
+#can change the simulationName below to run through all the scripts and obtain output easily enough
+#program paths will also need to be altered
 simulationName='steppeBison'
 #~/Documents/SummerScholarship/psmc-master/utils/fq2psmcfa $simulationName'.fq.gz' > $simulationName'.psmcfa'
 

@@ -1,5 +1,5 @@
 setwd("~/Documents/Summer Scholarship/RScripts/slidingWindow/")
-
+#a few R functions used for doing the sliding window error analysis
 eval_popsize = function(pos, x, y){ 
   #eval_popsize returns values of a left constant piecewise step function
   #pos is the position that you want to evaluate at

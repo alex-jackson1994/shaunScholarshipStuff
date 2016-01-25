@@ -1,7 +1,7 @@
 #!/bin/bash
-#this scripts removes the useful data from the last iteration of a PSMC run
-#pass a *.psmc file in on the command line and this prints a tab delimited
-#table of the data from the psmc run
+#USE: 'removeDataFromPSMC.sh [inputFile.psmc] > [outputFile.txt]
+#this scripts removes the useful data from the last iteration of a PSMC run.
+#Given a *.psmc file in on the command line and this prints a tab delimited table of the data from the psmc run
 
 #This first line just outputs the header of the columns
 echo 'k	t_k	lambda_k	sigma_k	\sum_{l\not=k}A_{kl}	A_{kk}'

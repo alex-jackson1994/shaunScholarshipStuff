@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-#This file takes a .psmcfa as an input file and then outputs a .psmcfa file to the command line where every chromosome/contig is split into two separate contigs. Generally called by 'python binarySplitPsmcfaPrint.py originalPsmcFile.psmcfa > splitFile.psmcfa'
+#USE: 'removeRandomPartsFromPsmcfa.py [inputFile.psmcfa] [probability=0.1] > [outputFile.psmcfa]
+#This script removes random individual lines from a .psmcfa file. This is similar to removeRandomContigs.py, however this operates on individual lines not on whole contigs.
+#The probability of removal is specified in the command line input
 import sys
 from random import random
 
