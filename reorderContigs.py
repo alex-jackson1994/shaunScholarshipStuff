@@ -2,7 +2,6 @@
 #USE: 'reorderContigs.py [inputFile.psmcfa] > [outputFile.psmcfa]'
 #This script reorders the location of contigs within a .psmcfa file. This in itself will do nothing to affect the results of PSMC however it may be used in conjunction with another script to remove the headers and create random contigs from the original contigs
 import sys
-from math import ceil
 from random import shuffle
 
 
@@ -50,7 +49,7 @@ for i in range(0,len(headers)-1):
 ###############################################################
 with open(filename) as infile:
 	for i in randomOrder:
-		infile.seek(lineOffset[headers[i]])
+		infile.seek(lineOffset[headers[i]])#NOTE: if we change this to [headers[i]+1] then it won't print any of the headers and will be combined into one giant chromsome. Potentially useful depending on your purposes
 		for j in range(0,chromoLength[i]-1):
 			line=infile.readline()
 			print(line, end='')
