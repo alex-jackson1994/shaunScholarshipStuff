@@ -4,7 +4,7 @@
 #Note this is only approximate since I used a random number generator and a bernoulli trial to decide whether the data should be kept or skipped
 #can change the simulationName below to run through all the scripts and obtain output easily enough
 #program paths will also need to be altered
-simulationName='steppeBison'
+simulationName='sim2'
 #~/Documents/SummerScholarship/psmc-master/utils/fq2psmcfa $simulationName'.fq.gz' > $simulationName'.psmcfa'
 
 for probability in '0' '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9'
