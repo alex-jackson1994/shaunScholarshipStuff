@@ -1,7 +1,7 @@
 library(stringr)
 library(ggplot2)
 #setwd("~/Documents/SummerScholarship/steppeBison/errorAnalysisRegression/steppeBison/") 
-setwd("~/Documents/SummerScholarship/simulatedData/removeRandomParts/sim2/")
+setwd("/home/alex/Desktop/Data/shaunWork/simulatedData/removeRandomParts/sim2")
 summaryFileList = list.files(pattern = "*Summary.txt",recursive=T)
 filelist = list.files(pattern = "*.txt",recursive=T)
 dataFileList<-setdiff(filelist,summaryFileList)
@@ -65,9 +65,12 @@ for(i in 1:length(dataFileList)){
   results<-rbind(results,cbind(dataFilePath,Int,summaryData,ErrorVal))
 }
 
-ggplot(data=results, mapping=aes(x=mean,y=ErrorVal))+geom_point(size=4)+geom_smooth()
-ggplot(data=results, mapping=aes(x=totalLength,y=ErrorVal))+geom_point(size=4)+geom_smooth()
+# guessing it doesn't matter about Int NAs? - Alex 1/2/16
 
+ggplot(data=results, mapping=aes(x=mean,y=ErrorVal))+geom_point(size=4)+geom_smooth()+ggtitle("Error versus mean contig length from sim2 data")
+
+
+ggplot(data=results, mapping=aes(x=totalLength,y=ErrorVal))+geom_point(size=4)+geom_smooth()
 #Plot all the Int 10*1 graphs
 Int10List = dataFileList
 int10Data<-data.frame()

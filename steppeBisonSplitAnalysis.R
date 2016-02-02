@@ -1,10 +1,11 @@
 library(stringr)
 library(ggplot2)
-setwd("~/Documents/SummerScholarship/steppeBison/errorAnalysisRegression/steppeBison/") 
+setwd("/home/alex/Desktop/Data/shaunWork/steppeBison/errorAnalysisRegression/steppeBison")
+#setwd("~/Documents/SummerScholarship/steppeBison/errorAnalysisRegression/steppeBison/") 
 #setwd("../../partAnalysis/steppeBison/  ")
 summaryFileList = list.files(pattern = "*Summary.txt",recursive=T)
 filelist = list.files(pattern = "*.txt",recursive=T)
-dataFileList<-setdiff(filelist,summaryFileList)
+dataFileList<-setdiff(filelist,summaryFileList) # all the files in the filelist that aren't summary files, i.e. the ones containing the psmc data
 
 # need to set up integration functions
 # this function will tell you PSMC's population size estimate at time "pos" given the x (time) and y (relative pop) data
@@ -68,7 +69,7 @@ results<-rbind(results,cbind(dataFilePath,Int,summaryData,ErrorVal))
 
 #ggplot(data=results[results$Int>10,], mapping=aes(x=log(mean),y=ErrorVal,colour=Int))+scale_colour_gradient(low="red", high="blue")+geom_point(size=4)+geom_label(label=rownames(results[results$Int>10,]))
 #PLOT MEAN VS ERROR for bigger than 20,30,40 intervals
-ggplot(data=results[results$Int>10,], mapping=aes(x=log(mean),y=ErrorVal,colour=Int))+scale_colour_gradient(low="red", high="blue")+geom_point(size=4)#+geom_smooth()
+ggplot(data=results[results$Int>10,], mapping=aes(x=log(mean),y=ErrorVal,colour=Int))+scale_colour_gradient(low="red", high="blue")+geom_point(size=4)+facet_grid(~Int) #+geom_smooth()
 #ggplot(data=results, mapping=aes(x=mean,y=ErrorVal))+geom_point(size=4)+geom_smooth()
 #ggplot(data=results, mapping=aes(x=totalLength,y=ErrorVal))+geom_point(size=4)+geom_smooth()
 # ggplot(data=results[results$Int>10,], mapping=aes(x=log(max),y=ErrorVal,colour=Int))+scale_colour_gradient(low="red", high="blue")+geom_point(size=4)#+geom_smooth()
